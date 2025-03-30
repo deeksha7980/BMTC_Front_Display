@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMTC Bus Display</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+
+    <!-- Interface 1: Bus Image + Display (Left Side) -->
+    <div id="interface1">
+        <h1 style="font-family: 'BMTCFont', sans-serif; color: yellow;">
+            Front View
+        </h1>
+        <div id="busContainer">
+            <img id="busImage" src="images/1690952993_BMTC_BUS.jpeg" alt="BMTC Bus">
+            <div id="display">
+                <span id="busNumber">214K</span>
+                <div id="scrollingText">
+                    <span id="stopName">Waiting for update...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interface 2: Buttons (Right Side) -->
+    <div id="interface2">
+        <h1 style="font-family: 'BMTCFont', sans-serif; color:yellow;">Stops🚎</h1>
+        <div id="buttonContainer">
+            <button onclick="sendUpdate('Konankunte Cross')">Konankunte Cross</button>
+            <button onclick="sendUpdate('Yelachenahalli')">Yelachenahalli</button>
+            <button onclick="sendUpdate('JP Nagar')">JP Nagar</button>
+            <button onclick="sendUpdate('Sarakki')">Sarakki</button>
+            <button onclick="sendUpdate('Banashankari')">Banashankari</button>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

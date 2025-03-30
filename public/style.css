@@ -1,0 +1,114 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row; /* Left-Right Layout */
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Interface 1 - Bus Display (Left Side) */
+#interface1 {
+    flex: 2; /* More space for bus */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Bus Container */
+#busContainer {
+    position: relative;
+    width: 100%;
+    max-width: 900px; /* Adjust size */
+}
+
+/* Bus Image */
+#busImage {
+    width: 100%;
+    height: auto;
+}
+/* BMTC Font Import */
+@font-face {
+    font-family: 'BMTCFont';
+    src: url('./fonts/triple_dot_digital-7.ttf') format('truetype');
+}
+
+/* Display Board */
+#display {
+    position: absolute;
+    top: 18%; /* Adjust position */
+    left: 52%;
+    transform: translateX(-50%) rotate(6deg);
+    font-family:'BMTCFont',sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0);
+    color: #FFCC00;
+    padding: 5px 15px;
+    border-radius: 5px;
+    width: 30%;
+    height: 30px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/* Fixed Bus Number */
+#busNumber {
+    flex-shrink: 0;
+    width: 90px;
+    text-align: center;
+}
+
+/* Scrolling Text */
+#scrollingText {
+    overflow: hidden;
+    white-space: nowrap;
+    flex-grow: 1;
+    position: relative;
+}
+
+#scrollingText span {
+    display: inline-block;
+    animation: scrollText 7s linear infinite;
+}
+
+@keyframes scrollText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Interface 2 - Control Buttons (Right Side) */
+#interface2 {
+    flex: 1; /* Smaller space for buttons */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+#buttonContainer {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center;
+    gap: 10px; /* Space between buttons */
+}
+
+/* Buttons */
+button {
+    font-family: 'BMTCFont',sans-serif;
+    font-size: 16px;
+    padding: 8px 15px;
+    cursor: pointer;
+    color:yellow;
+    font-weight: bold;
+    background-color:rgb(10, 9, 9);
+}
